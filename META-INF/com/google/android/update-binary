@@ -27,14 +27,15 @@ abort() { ui_print "$*"; umount /vendor; umount /data; exit 1; }
 show_progress 1.34 4;
 ui_print " ";
 ui_print " ";
-ui_print "ubports GSI by erfanoabdi @ xda-developers";
+ui_print "ubports installer script by erfanoabdi @ xda-developers";
+ui_print "Ubuntu Touch raphael port by hacker1024 & ubports-raphael @ GitHub";
 ui_print " ";
 mount -o ro /vendor;
 mount /data;
 
 mkdir -p /data/ubports/bin;
 cd /data/ubports;
-ui_print "Installing GSI...";
+ui_print "Installing system image...";
 unzip -o "$ZIP";
 if [ $? != 0 -o -z "$(ls /data/ubports/tools)" ]; then
   abort "Unzip failed. Aborting...";
